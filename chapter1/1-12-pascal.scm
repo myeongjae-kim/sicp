@@ -1,0 +1,28 @@
+(define (pascal n k)
+  (cond 
+    ((and (= n 0) (= k 0)) 1)
+    ((and (= n 1) (= k 0)) 1)
+    ((and (= n 1) (= k 1)) 1)
+    (else (cond 
+            ((= k 0) (pascal (- n 1) 0))
+            ((= k n) (pascal (- n 1) (- n 1)))
+            (else
+              (+ (pascal (- n 1) (- k 1)) (pascal (- n 1) k)))
+            ))
+    ))
+
+(pascal 0 0)
+(pascal 1 0)
+(pascal 1 1)
+(pascal 2 0)
+(pascal 2 1)
+(pascal 2 2)
+(pascal 3 0)
+(pascal 3 1)
+(pascal 3 2)
+(pascal 3 3)
+(pascal 4 0)
+(pascal 4 1)
+(pascal 4 2)
+(pascal 4 3)
+(pascal 4 4)
